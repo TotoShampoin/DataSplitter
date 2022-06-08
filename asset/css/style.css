@@ -159,6 +159,7 @@ textarea {
 }
 .datalist--alt .data__type {
     grid-area: type;
+    padding: 0 .5rem;
     border-radius: 0;
     font-style: italic;
     background: none;
@@ -210,6 +211,7 @@ textarea {
     margin: 0;
     transform: rotate(-90deg);
     stroke: var(--clr-5);
+    opacity: 1;
 }
 #loading.hidden {
     display: none;

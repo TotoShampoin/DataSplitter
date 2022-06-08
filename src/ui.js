@@ -34,7 +34,7 @@ export const addOrUpdateToOutputList = (item) => {
     if($item.length) {
         $item.find(".data__count").text(item.count);
     } else {
-        const $data = $(data_item_counted(item.key, item.name, item.count))
+        const $data = $(data_item_counted(item.name, item.key, item.count))
                         .attr("data-key", item.key);
         $output_list.append($data);
     }
@@ -43,8 +43,10 @@ export const addOrUpdateToOutputList = (item) => {
 export const switchProgress = (bool) => {
     if(bool) {
         $loading.removeClass("hidden");
+        $("input, button, select, textarea").attr("disabled", "disabled");
     } else {
         $loading.addClass("hidden");
+        $("input, button, select, textarea").removeAttr("disabled");
     }
 }
 
