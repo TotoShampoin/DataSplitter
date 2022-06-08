@@ -83,7 +83,7 @@ textarea {
 .area__content {
     grid-area: content;
     overflow-y: auto;
-    border-radius: 1rem;
+    border-radius: .5rem;
 }
 
 .button-list {

@@ -40,7 +40,8 @@ export const addOrUpdateToOutputList = (item) => {
     }
 }
 
-export const switchProgress = (bool) => {
+export const switchProgress = (bool, goTo = "#run") => {
+    $loading.appendTo(goTo);
     if(bool) {
         $loading.removeClass("hidden");
         $("input, button, select, textarea").attr("disabled", "disabled");

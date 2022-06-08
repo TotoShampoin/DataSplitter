@@ -31,6 +31,7 @@ on.downloadParam = () => {
 }
 
 on.downloadOutput = async () => {
+    UI.switchProgress(true, "#download-output");
     const data = await zip([
         globals.output.map(({key, data}) => ({key, data})),
         {
@@ -38,8 +39,11 @@ on.downloadOutput = async () => {
             table: globals.output.map(({key, name, count}) => ({key, name, count})),
             meta: JSON.parse(globals.param.meta),
         }
-    ]);
+    ], (item, progress) => {
+        UI.setProgress(progress);
+    });
     UI.download(data, "output.zip");
+    UI.switchProgress(false);
 }
 
 on.runSplitting = async () => {
