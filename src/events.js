@@ -61,6 +61,7 @@ on.paramDbNameChange = (name) => {
 }
 on.paramKeyFactorChange = (key) => {
     globals.param.key_factor = key;
+    UI.setKeyName(key);
 }
 on.paramKeyNameChange = (key) => {
     globals.param.key_name = key;

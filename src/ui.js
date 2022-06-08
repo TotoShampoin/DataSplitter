@@ -52,6 +52,11 @@ export const setProgress = (progress) => {
     $loading.css("--prc", progress);
 }
 
+export const setKeyName = (key) => {
+    $param_keyname.val(key);
+    $param_keyname.trigger("change");
+}
+
 export const download = (data, name) => {
     const a = document.createElement("a");
     a.href = data;
