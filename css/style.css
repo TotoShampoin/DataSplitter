@@ -1,0 +1,36 @@
+:root {
+    --bg: #DD88EE;
+    --clr-1: #EEAAFF;
+    --clr-2: #5500AA;
+    --clr-3: #220044;
+    --clr-4: #FFFFFF;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 96rem;
+    margin: auto;
+    background: var(--bg);
+}
+
+.head, .foot {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: var(--clr-1);
+    text-align: center;
+}
+
+.zone {
+    width: 100%;
+    height: calc(100vh - 12.5rem);
+    margin: auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: var(--clr-1);
+}

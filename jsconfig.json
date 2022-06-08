@@ -1,0 +1,10 @@
+{
+    "typeAcquisition": {
+        "include": [
+            "jquery",
+            "leaflet",
+            "jszip",
+            "jszip-utils",
+        ]
+    }
+}
