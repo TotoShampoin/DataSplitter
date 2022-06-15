@@ -73,3 +73,13 @@ export const fillParam = (param) => {
     $param_keyname.val(param.key_name);
     $param_meta.val(param.meta);
 }
+
+export const switchMetadatas = (bool) => {
+    if(bool) {
+        $param_meta.parent().show();
+        $param_dbname.parent().show();
+    } else {
+        $param_meta.parent().hide();
+        $param_dbname.parent().hide();
+    }
+}

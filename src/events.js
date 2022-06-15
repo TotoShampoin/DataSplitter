@@ -32,17 +32,19 @@ on.downloadParam = () => {
 
 on.downloadOutput = async () => {
     UI.switchProgress(true, "#download-output");
-    const data = await zip([
+    const param = globals.has_meta ? {
+        name: globals.param.data_name,
+        table: globals.output.map(({key, name, count}) => ({key, name, count})),
+        meta: JSON.parse(globals.param.meta),
+    } : globals.output.map(({key, name, count}) => ({key, name, count}));
+    const data = [
         globals.output.map(({key, data}) => ({key, data})),
-        {
-            name: globals.param.data_name,
-            table: globals.output.map(({key, name, count}) => ({key, name, count})),
-            meta: JSON.parse(globals.param.meta),
-        }
-    ], (item, progress) => {
+        param
+    ]
+    const zipped = await zip(data, (item, progress) => {
         UI.setProgress(progress);
     });
-    UI.download(data, "output.zip");
+    UI.download(zipped, "output.zip");
     UI.switchProgress(false);
 }
 
@@ -72,6 +74,10 @@ on.paramKeyNameChange = (key) => {
 }
 on.paramMetaChange = (meta) => {
     globals.param.meta = meta;
+}
+on.paramIncludeMeta = (include) => {
+    globals.has_meta = include;
+    UI.switchMetadatas(include);
 }
 
 }

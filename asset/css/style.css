@@ -175,6 +175,7 @@ textarea {
 }
 
 .menu {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: .5rem
@@ -183,6 +184,10 @@ textarea {
     padding: .5rem;
     border-radius: 1rem;
     background: var(--clr-2);
+}
+.menu__item--side {
+    position: absolute;
+    top: 0; right: 0;
 }
 
 .item {
@@ -202,6 +207,13 @@ textarea {
 .item__value--dark {
     background: var(--clr-4);
     color: var(--clr-6);
+}
+.item__value--checkbox {
+    align-self: center;
+    width: 2rem; height: 2rem;
+}
+.item__value--checkbox:checked {
+    background: var(--clr-3);
 }
 
 #loading {

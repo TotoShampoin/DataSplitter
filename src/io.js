@@ -8,6 +8,7 @@ export const on = {
     paramKeyFactorChange: (input) => {},
     paramKeyNameChange: (input) => {},
     paramMetaChange: (input) => {},
+    paramIncludeMeta: (input) => {},
 };
 
 // All are button elements
@@ -16,6 +17,7 @@ const $import_param = $("#import-param");
 const $download_param = $("#download-param");
 const $download_output = $("#download-output");
 const $run_splitting = $("#run-splitting");
+const $param_includemeta = $("#param-includemeta");
 const $param_dbname = $("#param-dbname");
 const $param_keyfactor = $("#param-keyfactor");
 const $param_keyname = $("#param-keyname");
@@ -61,4 +63,6 @@ $param_keyname.on("change", function(e) {
 $param_meta.on("change", function(e) {
     on.paramMetaChange(e.target.value);
 });
-
+$param_includemeta.on("change", function(e) {
+    on.paramIncludeMeta(e.target.checked);
+});

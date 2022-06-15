@@ -38,10 +38,6 @@
             </div>
             <div class="area__content menu">
                 <div class="menu__item item">
-                    <label class="item__name" for="param-dbname">Data name</label>
-                    <input class="item__value" type="text" name="param-dbname" id="param-dbname">
-                </div>
-                <div class="menu__item item">
                     <label class="item__name" for="param-keyfactor">Key split factor</label>
                     <select class="item__value" name="param-keyfactor" id="param-keyfactor">
                         <option value="" selected disabled>-- Choose --</option>
@@ -53,7 +49,15 @@
                         <option value="" selected disabled>-- Choose --</option>
                     </select>
                 </div>
-                <div class="menu__item item">
+                <div class="menu__item item menu__item--side">
+                    <label class="item__name" for="param-includemeta">Include meta data</label>
+                    <input class="item__value item__value--checkbox" type="checkbox" name="param-includemeta" id="param-includemeta">
+                </div>
+                <div class="menu__item item" style="display: none;">
+                    <label class="item__name" for="param-dbname">Data name</label>
+                    <input class="item__value" type="text" name="param-dbname" id="param-dbname">
+                </div>
+                <div class="menu__item item" style="display: none;">
                     <label class="item__name" for="param-meta">Meta data</label>
                     <textarea class="item__value item__value--dark" name="param-meta" id="param-meta" cols="60" rows="10">{}</textarea>
                 </div>
