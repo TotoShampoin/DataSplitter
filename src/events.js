@@ -36,7 +36,7 @@ on.downloadOutput = async () => {
         name: globals.param.data_name,
         table: globals.output.map(({key, name, count}) => ({key, name, count})),
         meta: JSON.parse(globals.param.meta),
-    } : globals.output.map(({key, name, count}) => ({key, name, count}));
+    } : globals.output.map(({key, name, count}) => ({name, path: `${key}.json`, length: count, key}));
     const data = [
         globals.output.map(({key, data}) => ({key, data})),
         param
