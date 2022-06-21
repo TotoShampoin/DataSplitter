@@ -1,6 +1,6 @@
 /**
  * 
- * @param {[HTMLImageElement, {}, []]} param0 
+ * @param {} param0 
  * @returns {Promise<Blob>}
  */
 export const zip = async ([output, param], onEachFileCallback = (item,progress)=>{}) => {
