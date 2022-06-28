@@ -47,8 +47,8 @@ export const splitJson = async (json, [key_factor, key_name], onEachCallback = (
     const output = [];
     for(let i in json) {
         const item = json[i];
-        const value = eval(`item.${key_factor}`);
-        const name = eval(`item.${key_name}`);
+        const value = eval(`item.${key_factor}`).trim();
+        const name = eval(`item.${key_name}`).trim();
         let output_item = output.find(item => item.key === value);
         if(!output_item) {
             output_item = {key: value, name, data: [], count: 0};
